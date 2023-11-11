@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  css: [
+    '~/assets/css/tailwind.css'
+  ],
+
   modules: [
     '@vite-pwa/nuxt'
   ],
@@ -55,6 +59,13 @@ export default defineNuxtConfig({
     devOptions: {
       enabled: true,
       type: 'module'
+    }
+  },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
     }
   }
 })
