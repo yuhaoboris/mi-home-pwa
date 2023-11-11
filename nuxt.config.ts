@@ -12,16 +12,19 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '~/assets/css/tailwind.css'
+    '~/assets/css/tailwind.css',
+    '~/assets/css/main.css'
   ],
 
   modules: [
     '@vite-pwa/nuxt',
     '@nuxt/ui',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@nuxt/image'
   ],
 
   pwa: {
+    registerType: 'autoUpdate',
     manifest: {
       name: 'UEC Smart Plug',
       short_name: 'UEC Plug',
@@ -61,6 +64,8 @@ export default defineNuxtConfig({
       ]
     },
     workbox: {
+      clientsClaim: true,
+      skipWaiting: true,
       navigateFallback: '/'
     },
     devOptions: {
