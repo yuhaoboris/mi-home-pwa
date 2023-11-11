@@ -16,7 +16,9 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@nuxt/ui',
+    'nuxt-icon'
   ],
 
   pwa: {
