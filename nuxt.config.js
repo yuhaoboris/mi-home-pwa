@@ -23,11 +23,16 @@ export default defineNuxtConfig({
 
   pwa: {
     manifest: {
-      name: '米家App',
-      short_name: '米家',
-      description: '米家，开启智能生活',
-      background_color: '#14b8a6',
+      name: 'UEC Smart Plug',
+      short_name: 'UEC Plug',
+      description: 'UEC Smart Plug，隨時隨地看護用電安全',
+      background_color: '#28A7E1',
       icons: [
+        {
+          src: 'icons/pwa-128x128.png',
+          sizes: '128x128',
+          type: 'image/png'
+        },
         {
           src: 'icons/pwa-144x144.png',
           sizes: '144x144',
