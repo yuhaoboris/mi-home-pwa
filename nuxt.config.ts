@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true
+    enabled: process.env.NODE_ENV === 'development'
   },
 
   css: [
@@ -61,7 +61,7 @@ export default defineNuxtConfig({
     },
     useCredentials: true,
     devOptions: {
-      enabled: true
+      enabled: process.env.NODE_ENV === 'development'
     }
   },
 
