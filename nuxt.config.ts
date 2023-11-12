@@ -24,7 +24,6 @@ export default defineNuxtConfig({
   ],
 
   pwa: {
-    registerType: 'autoUpdate',
     manifest: {
       name: 'UEC Smart Plug',
       short_name: 'UEC Plug',
