@@ -2,8 +2,21 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      title: 'UEC Smart Plug',
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+      meta: [
+        { name: 'description', content: 'UEC Smart Plug，隨時隨地看護用電安全' },
+        { name: 'keywords', content: '物聯網,智慧插座' },
+        { name: 'theme-color', content: '#28A7E1' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/android-chrome-192x192.png' },
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/android-chrome-512x512.png' }
+      ]
     }
   },
 
@@ -20,7 +33,8 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/ui',
     'nuxt-icon',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/robots'
   ],
 
   pwa: {
@@ -31,45 +45,23 @@ export default defineNuxtConfig({
       background_color: '#28A7E1',
       icons: [
         {
-          src: 'icons/pwa-128x128.png',
-          sizes: '128x128',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/pwa-144x144.png',
-          sizes: '144x144',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/pwa-152x152.png',
-          sizes: '152x152',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/pwa-192x192.png',
+          src: 'android-chrome-192x192.png',
           sizes: '192x192',
           type: 'image/png'
         },
         {
-          src: 'icons/pwa-256x256.png',
-          sizes: '256x256',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/pwa-512x512.png',
+          src: 'android-chrome-512x512.png',
           sizes: '512x512',
           type: 'image/png'
         }
       ]
     },
     workbox: {
-      clientsClaim: true,
-      skipWaiting: true,
-      navigateFallback: '/'
+      globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg}']
     },
+    useCredentials: true,
     devOptions: {
-      enabled: true,
-      type: 'module'
+      enabled: true
     }
   },
 
