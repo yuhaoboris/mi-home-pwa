@@ -21,7 +21,6 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.10.0",
-    "@nuxtjs/robots": "^3.0.0"
+    "@nuxt/ui": "^2.10.0"
   }
 }

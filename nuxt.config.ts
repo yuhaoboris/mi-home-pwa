@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: process.env.NODE_ENV === 'development'
+    enabled: true
   },
 
   css: [
@@ -33,12 +33,16 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/ui',
     'nuxt-icon',
-    '@nuxt/image',
-    '@nuxtjs/robots'
+    '@nuxt/image'
   ],
 
   pwa: {
+    registerType: 'autoUpdate',
+    scope: '/',
+    base: '/',
     manifest: {
+      id: '/',
+      scope: '/',
       name: 'UEC Smart Plug',
       short_name: 'UEC Plug',
       description: 'UEC Smart Plug，隨時隨地看護用電安全',
@@ -56,14 +60,17 @@ export default defineNuxtConfig({
         }
       ]
     },
-    strategies: 'generateSW',
     workbox: {
-      navigateFallback: null,
-      globPatterns: ['**/*.{js,css,html,ico,png,jpg,svg}']
+      globPatterns: ['**/*.{js,css,html,ico,png,jpg,svg}'],
+      navigateFallback: '/',
+      cleanupOutdatedCaches: true
     },
+    registerWebManifestInRouteRules: true,
+    writePlugin: true,
     useCredentials: true,
     devOptions: {
-      enabled: process.env.NODE_ENV === 'development'
+      enabled: process.env.VITE_PLUGIN_PWA === 'true',
+      navigateFallback: '/'
     }
   },
 
