@@ -56,8 +56,9 @@ export default defineNuxtConfig({
         }
       ]
     },
+    strategies: 'generateSW',
     workbox: {
-      navigateFallback: '/',
+      navigateFallback: null,
       globPatterns: ['**/*.{js,css,html,ico,png,jpg,svg}']
     },
     useCredentials: true,
