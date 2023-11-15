@@ -1,0 +1,27 @@
+{
+  "name": "UEC Smart Plug",
+  "short_name": "UEC Plug",
+  "description": "UEC Smart Plug，隨時隨地看護用電安全",
+  "background_color": "#28A7E1",
+  "theme_color": "#28A7E1",
+  "display": "standalone",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
