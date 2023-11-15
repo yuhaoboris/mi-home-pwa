@@ -72,7 +72,8 @@ export default defineNuxtConfig({
       navigateFallback: null,
       globPatterns: ['*/**.{js,css,html,png,jpg,svg,ico}'],
       skipWaiting: true,
-      clientsClaim: true
+      clientsClaim: true,
+      importScripts: ['/app-sw.js']
     },
     client: {
       installPrompt: true,
