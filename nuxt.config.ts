@@ -38,10 +38,8 @@ export default defineNuxtConfig({
   ],
 
   pwa: {
-    strategies: 'injectManifest',
-    // registerType: 'autoUpdate',
-    srcDir: './service-worker',
-    filename: 'sw.js',
+    strategies: 'generateSW',
+    registerType: 'autoUpdate',
     scope: '/',
     manifest: {
       name: 'UEC Smart Plug',
@@ -67,16 +65,19 @@ export default defineNuxtConfig({
           type: 'image/png',
           purpose: 'any maskable'
         }
-      ]
+      ],
+      start_url: '/'
     },
-    // workbox: {
-    //   navigateFallback: null,
-    //   globPatterns: ['*/**.{js,css,html,png,jpg,svg,ico}']
-    // },
-    // client: {
-    //   installPrompt: true
-    // },
-    // periodicSyncForUpdates: 3600,
+    workbox: {
+      navigateFallback: null,
+      globPatterns: ['*/**.{js,css,html,png,jpg,svg,ico}'],
+      skipWaiting: true,
+      clientsClaim: true
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 3600
+    },
     devOptions: {
       enabled: true,
       type: 'module',
