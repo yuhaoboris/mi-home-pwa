@@ -34,7 +34,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-icon',
     '@nuxt/image',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@vueuse/nuxt'
   ],
 
   pwa: {
@@ -73,7 +74,7 @@ export default defineNuxtConfig({
       globPatterns: ['*/**.{js,css,html,png,jpg,svg,ico}'],
       skipWaiting: true,
       clientsClaim: true,
-      importScripts: ['/app-sw.js']
+      importScripts: ['/service-worker.js']
     },
     client: {
       installPrompt: true,
